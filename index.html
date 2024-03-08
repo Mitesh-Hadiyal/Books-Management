@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Management</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fa-sharp fa-solid fa-book fa-2xl m-4 text-light"></i>
+                </div>
+                <div class="col-md-6 text-light">
+                    <h1>Books Management</h1>
+                </div>
+                <div class="col-md-3">
+                    <button><a onclick="display()">Display</a></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <form id="myForm">
+            <div class="container my-5 myblock" style="border: 2px solid black;">
+                <div class="row m-4">
+                    <div class="col-md-6">
+                        <lable>ISBN No:</lable>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="isbn" placeholder="ISBN No..." required>
+                    </div>
+                </div>
+                <div class="row m-4">
+                    <div class="col-md-6">
+                        <lable>Book Name :</lable>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="bname" placeholder="Book Name..." required>
+                    </div>
+                </div>
+                <div class="row m-4">
+                    <div class="col-md-6">
+                        <lable>Auther Name :</lable>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="auther" placeholder="Auther Name..." required><br>
+                    </div>
+                </div>
+                <div class="row m-4">
+                    <div class="col-md-6">
+                        <lable>Publication :</lable>
+                    </div>
+                    <div class="col-md-6">
+                        <select style="width:49%; height: 2rem;" name="publication" id="publication" required>
+                            <option value="" selected>Select Publication</option>
+                            <option value="Navneet">Navneet</option>
+                            <option value="Shine">Shine</option>
+                            <option value="Navi">Navi</option>
+                            <option value="Pusti">Pusti</option>
+                            <option value="Sharp">Sharp</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row m-4">
+                    <div class="col-md-6">
+                        <lable>Book type :</lable>
+                    </div>
+                    <div class="col-md-6">
+                        <input class="mx-2" type="radio" name="btype" id="general" value="General" checked>General
+                        <input class="mx-2" type="radio" name="btype" id="special" value="Special">Special
+                    </div>
+                </div>
+                <div class="row m-4">
+                    <div class="col-md-6">
+                        <lable>Price :</lable>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" id="price" placeholder="Price..." required>
+                    </div>
+                </div>
+                <div class="row m-4">
+                    <div class="col-md-6">
+                        <lable>Pages :</lable>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" id="pages" placeholder="Pages..." required>
+                    </div>
+                </div>
+                <div class="row m-4">
+                    <div class="col-md-6">
+                        <lable>No. of Books :</lable>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" id="noOfBook" placeholder="Number of Books..." required>
+                    </div>
+                </div>
+                <div class="row m-4">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                        <input id="update" type="submit" value="Update" onclick="updateData()"hidden>
+                        <input id="submit" type="submit" value="Submit" onclick="onSubmit()">
+                        <input class="mx-2" id="reset" type="reset" value="Reset">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="container" id="tbl">
+            <table>
+                <thead id="thd">
+
+                </thead>
+                <tbody id="tbd">
+
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </main>
+
+    <!-- <script src="jQuery/jquery-3.7.1.min.js"></script> -->
+</body>
+
+</html>
